@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async"
 import { Github, Linkedin, Mail, ExternalLink, Instagram, Sparkles } from "lucide-react"
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import IdCardLanyard from "../components/IdCardLanyard"
 
 const StatusBadge = memo(() => (
   <div className="inline-block animate-float lg:mx-0" data-aos="zoom-in" data-aos-delay="400">
@@ -79,9 +80,9 @@ const PAUSE_DURATION = 2000;
 const WORDS = ["Network & Telecom Student", "Tech Enthusiast"];
 const TECH_STACK = ["React", "Javascript", "Node.js", "Tailwind"];
 const SOCIAL_LINKS = [
-  { icon: Github, link: "https://github.com/EkiZR", label: "GitHub Profile" },
-  { icon: Linkedin, link: "https://www.linkedin.com/in/ekizr/", label: "LinkedIn Profile" },
-  { icon: Instagram, link: "https://www.instagram.com/ekizr_/?hl=id", label: "Instagram Profile" }
+  { icon: Github, link: "https://github.com/DiyowHaw", label: "GitHub Profile" },
+  { icon: Linkedin, link: "https://www.linkedin.com/in/diogentanoramadhan", label: "LinkedIn Profile" },
+  { icon: Instagram, link: "https://www.instagram.com/gntnormdhn?igsh=MWF3NXo2ZXVwejU3Zw==", label: "Instagram Profile" }
 ];
 
 const Home = () => {
@@ -90,7 +91,6 @@ const Home = () => {
   const [wordIndex, setWordIndex] = useState(0)
   const [charIndex, setCharIndex] = useState(0)
   const [isLoaded, setIsLoaded] = useState(false)
-  const [isHovering, setIsHovering] = useState(false)
 
   useEffect(() => {
     const initAOS = () => {
@@ -140,25 +140,25 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Eki Zulfar Rachman — Frontend Web Developer</title>
-        <meta name="description" content="Website resmi Eki Zulfar Rachman, Front-End Web Developer. Saya berfokus pada penciptaan pengalaman digital yang menarik dan selalu berupaya memberikan solusi terbaik dalam setiap proyek yang saya kerjakan." />
+        <title>Dio Gentano Ramadhan — Frontend Developer</title>
+        <meta name="description" content="Website resmi Dio Gentano Ramadhan, Frontend Developer." />
      <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://ekizr.com" />
-        <meta property="og:title" content="Eki Zulfar Rachman — Frontend Web Developer" />
-     <meta property="og:description" content="Website resmi dan portofolio Eki Zulfar Rachman, Front-End Web Developer." />
-        <meta property="og:url" content="https://ekizr.com" />
+        <link rel="canonical" href="https://dio-dev.web.id" />
+        <meta property="og:title" content="Dio Gentano Ramadhan — Frontend Developer" />
+     <meta property="og:description" content="Website resmi dan portofolio Dio Gentano Ramadhan, Frontend Developer." />
+        <meta property="og:url" content="https://dio-dev.web.id" />
         <meta property="og:type" content="website" />
         <script type="application/ld+json">{`
           {
             "@context": "https://schema.org",
             "@type": "Person",
-            "name": "Eki Zulfar Rachman",
+            "name": "Dio Gentano Ramadhan",
             "jobTitle": "Frontend Developer",
-            "url": "https://ekizr.com",
+            "url": "https://dio-dev.web.id",
             "sameAs": [
-              "https://github.com/EkiZR",
-              "https://www.linkedin.com/in/ekizr/",
-              "https://www.instagram.com/ekizr_/"
+              "https://github.com/DiyowHaw",
+              "https://www.linkedin.com/in/diogentanoramadhan",
+              "https://www.instagram.com/gntnormdhn?igsh=MWF3NXo2ZXVwejU3Zw=="
             ]
           }
         `}</script>
@@ -213,39 +213,18 @@ const Home = () => {
                 </div>
               </div>
 
-              {/* Right Column - WebM Video */}
-              <div className="w-full py-0 md:py-[10%] sm:py-0 lg:w-1/2 h-[260px] sm:h-[400px] lg:h-[600px] xl:h-[750px] relative flex items-center justify-center order-2 lg:order-2  mt-5 sm:mt-0"
-                onMouseEnter={() => setIsHovering(true)}
-                onMouseLeave={() => setIsHovering(false)}
+              {/* Right Column - ID Card */}
+              <div
+                className="w-full py-0 md:py-[6%] sm:py-0 lg:w-1/2 relative flex items-center justify-center order-2 lg:order-2 mt-8 sm:mt-0"
                 data-aos="fade-left"
-                data-aos-delay="600">
-                <div className="relative w-full opacity-90">
-                  <div className={`absolute inset-0 bg-gradient-to-r from-[#6366f1]/10 to-[#a855f7]/10 rounded-3xl blur-3xl transition-all duration-700 ease-in-out ${
-                    isHovering ? "opacity-50 scale-105" : "opacity-20 scale-100"
-                  }`}>
+                data-aos-delay="600"
+              >
+                <div className="relative w-full flex justify-center lg:justify-end">
+                  <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
+                    <div className="w-[180px] h-[240px] sm:w-[240px] sm:h-[320px] bg-gradient-to-br from-indigo-500/15 to-purple-500/15 blur-3xl rounded-full"></div>
                   </div>
-
-                  <div className={`relative lg:left-12 z-10 w-full opacity-90 transform transition-transform duration-500 ${
-                    isHovering ? "scale-105" : "scale-100"
-                  }`}>
-                    <img
-                      src="Animation1.gif"
-                      alt="Developer Animation"
-                      className={`w-full h-full object-contain transition-all duration-500 ${
-                        isHovering 
-                          ? "scale-[95%] sm:scale-[90%] md:scale-[90%] lg:scale-[90%] rotate-2" 
-                          : "scale-[90%] sm:scale-[80%] md:scale-[80%] lg:scale-[80%]"
-                      }`}
-                    />
-                  </div>
-
-                  <div className={`absolute inset-0 pointer-events-none transition-all duration-700 ${
-                    isHovering ? "opacity-50" : "opacity-20"
-                  }`}>
-                    <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-gradient-to-br from-indigo-500/10 to-purple-500/10 blur-3xl animate-[pulse_6s_cubic-bezier(0.4,0,0.6,1)_infinite] transition-all duration-700 ${
-                      isHovering ? "scale-110" : "scale-100"
-                    }`}>
-                    </div>
+                  <div className="relative z-10 w-full">
+                    <IdCardLanyard />
                   </div>
                 </div>
               </div>
